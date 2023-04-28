@@ -23,12 +23,12 @@ profile = load(sspfile);
 addpath('2-rampe/');
 
 % common parameters
-sourceDepth = 50; % m
+sourceDepth = 75; % m
 sourceFrequency = 200; % Hz
 
 % beamed source
-beamwidth = 16;
-steerAngle = -12;
+beamwidth = 12;
+steerAngle = -10;
 
 % computation
 maxRange = 60e3; % m
@@ -56,8 +56,8 @@ subtitle(sprintf('beamwidth=%d, steerangle = %d',beamwidth,steerAngle));
 addpath('3-beamformer/');
 
 c0 = speed.c0;
-plotr = 46000;
-plotz = 100;
+plotr = 31000;
+plotz = 75;
 
 [beamformer.beamed,beamlook] = h_run_beamformer(source,solvegrid,beamed,c0,plotr,plotz);
 [beamformer.omni,~]          = h_run_beamformer(source,solvegrid,omni,c0,plotr,plotz);
